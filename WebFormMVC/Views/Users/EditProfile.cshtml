@@ -1,0 +1,49 @@
+﻿@model ConsumeAPINet6.Models.User
+@{
+    ViewData["Title"] = "Edit Profile";
+    Layout = ViewBag.Layout ?? "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .box {
+        background-color: white;
+        font-family: "Roboto Slab", serif;
+        font-weight: 300;
+        box-shadow: 0 10px 8px rgba(109,40,255,0.5);
+        border-radius: 10px;
+        font-size: 14px;
+    }
+
+    .circle {
+        width: 200px;
+        height: 200px;
+        background-color: #f0f0f0;
+        border-radius: 50%; /* Membuat bentuk lingkaran */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; /* Memastikan gambar tidak keluar dari lingkaran */
+    }
+
+    .circle-img {
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 50%; /* Mengatur gambar menjadi bentuk lingkaran */
+    }
+
+</style>
+<div class="row justify-content-center mt-2 ps-3 pe-3">
+    <div class="col-xl-8 col-md-10 col-sm-10 box pt-3">
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger text-form mt-2" style="font-size:14px!important" role="alert">@TempData["Error"]</div>
+        }
+        <form asp-action="EditProfile" enctype="multipart/form-data">
+            <div class="circle">
+                <img src="@ViewBag.Profile" alt="gambar" class="circle-img">
+            </div>
+            <input type="file" asp-for="image" />
+            <input type="text" asp-for="name" />
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+</div>

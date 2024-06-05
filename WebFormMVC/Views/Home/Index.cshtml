@@ -1,0 +1,65 @@
+﻿@model ConsumeAPINet6.Models.User
+
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = ViewBag.Layout ?? "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome,@Model.name</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+@* <div class="row">
+    <div class="col-6">
+        <select id="courseid" asp-for="courseid" asp-items="@ViewBag.CourseList" class="form-select">
+            <option disabled selected>--Select Course--</option>
+        </select>
+    </div>
+    <div class="col-6">
+        <select class="form-select" id="userbycourseid">
+        </select>
+    </div>
+</div> *@
+
+
+@section Scripts{
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#courseid").change(function () {
+                GetUsersByCourseId($(this).val()); // Memanggil fungsi GetUsersByCourseId dengan nilai CourseId yang dipilih
+            });
+            $("#userbycourseid").select2();
+            var GetUsersByCourseId = function (courseId) { // Menerima courseId sebagai argumen
+                $.ajax({
+                    url: '@Url.Action("GetUsersByCourseId", "Home")',
+                    type: 'GET',
+                    data: {
+                        CourseId: courseId // Menggunakan courseId dari argumen
+                    },
+                    success: function (data) {
+                        console.log("berhasil get course")
+                        console.log(data)
+                        $('#userbycourseid').empty().append('<option disabled selected>--Select User--</option>');
+                        $(data).each(
+                            function (index, item) {
+                                $('#userbycourseid').append('<option value = "' + item.id + '">' + item.name + '</option>');
+                            }
+                        );
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(xhr.responseText); // Log error ke konsol jika ada kesalahan saat memanggil API
+                    }
+                });
+            };
+        })
+    </script>
+}
+
+
+

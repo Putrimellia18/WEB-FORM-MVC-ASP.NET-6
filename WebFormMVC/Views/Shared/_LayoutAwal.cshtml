@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ConsumeAPINet6</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+@*     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ConsumeAPINet6.styles.css" asp-append-version="true" /> *@
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        .title {
+            font-family: "Playfair Display", serif;
+            font-optical-sizing: auto;
+            font-weight: 900;
+            font-style: normal;
+            font-size: 30px;
+            color: rgba(109, 40, 255, 0.8);
+        }
+        .subtitle{
+            font-family: "PlayFair Display", serif;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <div class="row align-items-center justify-content-center g-0 min-vh-100" ">
+        <div class="col col-xl-4 col-lg-6 col-md-8 col-sm-12 py-8 py-xl-0">
+            <div class="card" style="box-shadow: 0 10px 12px rgba(109,40,255,0.5)">
+                <div class="p-2 ps-4 justify-content-start">
+                    <div class="row justify-content-center">
+                        <div class="title">Welcome Back, Dear !</div>
+                    </div>
+                    <div class="row pt-2 justify-content-center">
+                        <div class="subtitle">Please enter your user information!</div>
+                    </div>
+                </div>
+                <div class="card-body p-6">
+                    <div class="mb-4">
+                        <main role="main" class="pb-3">
+                            @RenderBody()
+                        </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
