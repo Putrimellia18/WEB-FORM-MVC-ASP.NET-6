@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PUTRI\\ASPNET\\ConsumeAPINet6\\ConsumeAPINet6\\ConsumeAPINet6.csproj": {}
+    "D:\\PUTRI\\ASPNET\\WEB-FORM-MVC-ASP.NET-6\\ConsumeAPINet6\\ConsumeAPINet6.csproj": {}
   },
   "projects": {
-    "D:\\PUTRI\\ASPNET\\ConsumeAPINet6\\ConsumeAPINet6\\ConsumeAPINet6.csproj": {
+    "D:\\PUTRI\\ASPNET\\WEB-FORM-MVC-ASP.NET-6\\ConsumeAPINet6\\ConsumeAPINet6.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PUTRI\\ASPNET\\ConsumeAPINet6\\ConsumeAPINet6\\ConsumeAPINet6.csproj",
+        "projectUniqueName": "D:\\PUTRI\\ASPNET\\WEB-FORM-MVC-ASP.NET-6\\ConsumeAPINet6\\ConsumeAPINet6.csproj",
         "projectName": "ConsumeAPINet6",
-        "projectPath": "D:\\PUTRI\\ASPNET\\ConsumeAPINet6\\ConsumeAPINet6\\ConsumeAPINet6.csproj",
+        "projectPath": "D:\\PUTRI\\ASPNET\\WEB-FORM-MVC-ASP.NET-6\\ConsumeAPINet6\\ConsumeAPINet6.csproj",
         "packagesPath": "C:\\Users\\faris\\.nuget\\packages\\",
-        "outputPath": "D:\\PUTRI\\ASPNET\\ConsumeAPINet6\\ConsumeAPINet6\\obj\\",
+        "outputPath": "D:\\PUTRI\\ASPNET\\WEB-FORM-MVC-ASP.NET-6\\ConsumeAPINet6\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
